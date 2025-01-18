@@ -21,10 +21,11 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 app.use(
-  cors({
-    origin: "https://rapid-keys-4fglw2ho4-mantina-sagars-projects.vercel.app",
-    credentials: true,
-  })
+cors({
+  origin: "*",
+  credentials: false,
+})
+
 );
 
 // MongoDB Connection
