@@ -22,9 +22,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 app.use(
 cors({
-  origin: "*",
-  credentials: false,
-})
+    origin: "https://rapid-keys-4fglw2ho4-mantina-sagars-projects.vercel.app",
+    credentials: true,
+  }) 
 
 );
 
