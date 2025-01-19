@@ -20,12 +20,22 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
-app.use(
-cors({
-    origin: "https://rapid-keys-2ainbqkq3-mantina-sagars-projects.vercel.app",
-    credentials: true,
-  }) 
+const allowedOrigins = [
+  "https://rapid-keys-2ainbqkq3-mantina-sagars-projects.vercel.app",
+  "https://rapid-keys-4fglw2ho4-mantina-sagars-projects.vercel.app",
+];
 
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
 );
 
 // MongoDB Connection
