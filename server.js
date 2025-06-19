@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cookieParser());
 const allowedOrigins = [
   "https://rapid-keys-2ainbqkq3-mantina-sagars-projects.vercel.app",
-  "https://rapid-keys-4fglw2ho4-mantina-sagars-projects.vercel.app",
+  "'https://rapidkeys-backend.onrender.com/",
 ];
 
 app.use(
